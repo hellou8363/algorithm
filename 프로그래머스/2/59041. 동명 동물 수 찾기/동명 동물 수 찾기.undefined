@@ -1,0 +1,11 @@
+-- FROM 동물의 정보를 담은 테이블에서
+-- GROUP BY 동물의 이름을 기준으로 그룹화하여
+-- HAVING 두 번 이상 쓰인
+-- SELECT 이름과 해당 이름이 쓰인 횟수를 조회하여
+-- ORDER BY 이름순으로 정렬
+
+SELECT name, count(name)
+FROM animal_ins
+GROUP BY name
+HAVING count(name) > 1
+ORDER BY name
