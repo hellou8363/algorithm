@@ -9,7 +9,7 @@
 -- 5. 조회된 데이터를 카테고리를 기준으로 오름차순 정렬한다.
 SELECT t1.category, sum(sales)
 FROM book t1
-    INNER JOIN book_sales t2
+    JOIN book_sales t2
     ON t1.book_id = t2.book_id
 WHERE t2.sales_date BETWEEN '2022-01-01' AND '2022-01-31'
 GROUP BY t1.category
