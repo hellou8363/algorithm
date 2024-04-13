@@ -6,7 +6,7 @@
 -- LIMIT 3마리만
 SELECT t1.name, t1.datetime
 FROM animal_ins t1
-    LEFT OUTER JOIN animal_outs t2
+    LEFT JOIN animal_outs t2
     ON t1.animal_id = t2.animal_id
 WHERE t2.animal_id IS NULL
 ORDER BY t1.datetime 
