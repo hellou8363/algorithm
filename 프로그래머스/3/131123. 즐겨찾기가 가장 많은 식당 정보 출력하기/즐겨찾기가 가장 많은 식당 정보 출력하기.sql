@@ -16,6 +16,5 @@ with t1 as (
 SELECT t1.food_type, rest_id, rest_name, t1.favorites
 FROM t1
     JOIN rest_info t2
-    ON t1.food_type = t2.food_type
-WHERE t1.favorites = t2.favorites
+    ON t1.food_type = t2.food_type AND t1.favorites = t2.favorites
 ORDER BY 1 DESC
