@@ -3,4 +3,5 @@
 -- ---------------------------
 SELECT count(id) AS fish_count
 FROM fish_info
-WHERE time BETWEEN '2021-01-01' AND '2021-12-31'
+-- WHERE time BETWEEN '2021-01-01' AND '2021-12-31'
+WHERE YEAR(time) = 2021
