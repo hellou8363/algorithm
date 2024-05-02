@@ -1,9 +1,12 @@
 import java.io.BufferedReader
+import java.io.BufferedWriter
 import java.io.InputStreamReader
+import java.io.OutputStreamWriter
 import java.util.*
 
 fun main() {
     val br = BufferedReader(InputStreamReader(System.`in`))
+    val bw = BufferedWriter(OutputStreamWriter(System.out))
 
     val countInput = br.readLine().split(" ").map { it.toInt() }
     val array = IntArray(countInput[0] + 1)
@@ -20,6 +23,9 @@ fun main() {
         val i = st.nextToken().toInt()
         val j = st.nextToken().toInt()
 
-        println(array[j] - array[i - 1])
+        bw.write("${(array[j] - array[i - 1])}\n")
     }
+
+    bw.flush()
+    bw.close()
 }
