@@ -1,15 +1,25 @@
-fun main() {
-    val countInput = readln().split(" ").last().toInt() // 데이터의 개수, 질의 개수
-    val array = readln().split(" ").map { it.toInt() }.toIntArray() // 구간 합을 구할 대상 배열
-    val sumArray = intArrayOf(0, *array)
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.util.*
 
-    for (i in 1..array.size) {
-        sumArray[i] = sumArray[i - 1] + sumArray[i]
+fun main() {
+    val br = BufferedReader(InputStreamReader(System.`in`))
+
+    val countInput = br.readLine().split(" ").map { it.toInt() }
+    val array = IntArray(countInput[0] + 1)
+
+    val st = StringTokenizer(br.readLine())
+
+    for (i in 1..countInput[0]) {
+        array[i] = array[i - 1] + st.nextToken().toInt()
     }
 
-    for (i in 1..countInput) {
-        val input = readln().split(" ")
+    for (i in 1..countInput[1]) {
+        val st = StringTokenizer(br.readLine())
 
-        println(sumArray[input[1].toInt()] - sumArray[input[0].toInt() - 1])
+        val i = st.nextToken().toInt()
+        val j = st.nextToken().toInt()
+
+        println(array[j] - array[i - 1])
     }
 }
